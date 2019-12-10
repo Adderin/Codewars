@@ -8,7 +8,6 @@ class Calculator {
         System.out.println(num);}
 
     public static void main(String[] args) {
-
         Calculator obj = new Calculator();
         obj.calc(2);
         obj.printNum();
