@@ -19,7 +19,6 @@ class Meeting {
                     String temp = tempMember[1];
                     tempMember[1] = tempMember[0];
                     tempMember[0] = temp;
-                    //System.out.println(temp);
                     result[i] = Arrays.toString(tempMember);
                    }
                 Arrays.sort(result);
