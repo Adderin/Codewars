@@ -1,13 +1,13 @@
 package kyu6;
 
 public class Line {
-    static int[] customers = {25, 25, 50};
+    static int[] customers = {25, 25, 50, 25, 50, 100};
     public static int count_25 = 0;
     public static int count_50 = 0;
-    public static int count_100 = 0;
+    public static int check = 0;
 
     public static void main(String[] args) {
-        TicketSale(customers);
+        System.out.println("Sale was successful: " + TicketSale(customers));
         System.out.printf("25: %d and 50: %d", count_25, count_50);
     }
 
@@ -18,26 +18,25 @@ public class Line {
                     count_25++;
                     break;
                 case 50:
-                    ChangeOperations(customers[i]);
+                    check = ChangeOperations(customers[i]);
+                    if(check==1) return "NO";
                     count_50++;
                     break;
                 case 100:
-                    ChangeOperations(customers[i]);
-                    count_100++;
+                    check = ChangeOperations(customers[i]);
+                    if(check==1) return "NO";
                     break;
-                default:
-                    System.out.println("Something went wrong!");
-                    return "NO";
+
             }
         }
     return "YES";}
 
-    public static void ChangeOperations(int ticket) {
+    public static int ChangeOperations(int ticket) {
         switch (ticket) {
             case 50:
                 if (count_25 >= 1) {
                     count_25--;
-                }
+                } else return 1;
                 break;
             case 100:
                 if (count_50 >= 1 && count_25 >= 1) {
@@ -45,9 +44,10 @@ public class Line {
                     count_25--;
                 } else if (count_25 >= 3) {
                     count_25 = count_25 - 3;
-                }
+                } else return 1;
                 break;
         }
+        return 0;
     }
 
 }
