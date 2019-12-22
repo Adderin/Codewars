@@ -1,4 +1,4 @@
-package others;
+package practice;
 
 class InheritancePractice {
     private int data;

@@ -1,4 +1,4 @@
-package others;
+package practice;
 
 public class ConstructorPractice {
     public static String color;
