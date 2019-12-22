@@ -23,6 +23,6 @@ public class StrongestEvenNumber {
     }
 
     public static void main(String[] args) {
-        System.out.println(strongestEven(1,2));
+        System.out.println(strongestEven(129,193 ));
     }
 }
