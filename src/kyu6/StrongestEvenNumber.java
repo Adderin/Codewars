@@ -1,4 +1,5 @@
 package kyu6;
+
 public class StrongestEvenNumber {
 
     public static int strongestEven(int n, int m) {
@@ -6,10 +7,9 @@ public class StrongestEvenNumber {
         int max = 0;
         for(int i = n; i <= m; i++) {
             if(checkStrength(i) > strongness) {
-            strongness = checkStrength(i);
-            max = i;
-            }
-
+                strongness = checkStrength(i);
+                max = i;
+           }
         }
         return max;
     }
@@ -23,6 +23,6 @@ public class StrongestEvenNumber {
     }
 
     public static void main(String[] args) {
-        System.out.println(strongestEven(129,193 ));
+        System.out.println(strongestEven(393330851,2032066346 ));
     }
 }
